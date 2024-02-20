@@ -1,0 +1,42 @@
+{% load static %}
+<h2 class="text-white">Beépített bútorok</h2>
+<div class="row" id="built-in-furniture-gallery">
+  <!-- Képek betöltődnek ide -->
+  {% for image in images %}
+    {% if image.category.id == 5 %}
+      <div class="col-lg-3 col-md-4 mb-4 col-xs-6 image-item built-in-furniture-image-box" style="display: none;">
+        <img
+          src="{{ image.image.url }}"
+          class="w-100 shadow-1-strong rounded mb-4 show-img built-in-furniture-image"
+          alt="{{ image.name }}"
+          onclick="openModal(this)"
+        />
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<nav aria-label="Built-in furniture navigation">
+  <ul class="pagination" id="built-in-furniture-pagination">
+    <!-- Lapozó gombok betöltődnek ide -->
+  </ul>
+</nav>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-image" src="" />
+    <div class="prev" onclick="changeImage(-1)">&#10094;</div>
+    <div class="next" onclick="changeImage(1)">&#10095;</div>
+  </div>
+</div>
+
+<script>
+  const builtInFurnitureImages = [
+    {% for image in images %}
+      {% if image.category.id == 5 %}
+        "{{ image.image.url }}",
+      {% endif %}
+    {% endfor %}
+  ];
+</script>
+<script src="../static/js/builtInFurnitureGallery.js"></script>

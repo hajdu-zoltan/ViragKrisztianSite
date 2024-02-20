@@ -1,0 +1,145 @@
+
+.card_reference {
+  display: grid;
+  place-items: center;
+  width: 80vw;
+  max-width: 21.875rem;
+  height: 28.125rem;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  color: white;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card_reference > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.card_reference__background {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+
+.card_reference__content {
+    width: 100%;
+  --flow-space: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: 55%;
+  padding: 12% 1.25rem 1.875rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+
+.card_reference__content--container {
+  --flow-space: 1.25rem;
+}
+
+.card_reference__title {
+  color: white;
+  position: relative;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+}
+
+.card_reference__title::after {
+  content: "";
+  position: absolute;
+  height: 0.3125rem;
+  width: calc(100% + 1.25rem);
+  bottom: calc((1.25rem - 0.5rem) * -1);
+  left: -1.25rem;
+  background-color: var(--brand-color);
+}
+
+.card_reference__button {
+  padding: 0.75em 1.6em;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+  font-variant: small-caps;
+  font-weight: bold;
+  border-radius: 0.45em;
+  border: none;
+  background-color: var(--brand-color);
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  color: var(--black);
+}
+
+.card_reference__button:focus {
+  outline: 2px solid black;
+  outline-offset: -5px;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .card_reference__content {
+    transform: translateY(62%);
+    transition: transform 500ms ease-out;
+    transition-delay: 500ms;
+  }
+
+  .card_reference__title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
+
+  .card_reference__background {
+    transition: transform 500ms ease-in;
+  }
+
+  .card_reference__content--container > :not(.card__title),
+  .card_reference__button {
+    opacity: 0;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
+  .card_reference:hover,
+  .card_reference:focus-within {
+    transform: scale(1.05);
+    transition: transform 500ms ease-in;
+  }
+
+  .card_reference:hover .card__content,
+  .card_reference:focus-within .card__content {
+    transform: translateY(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .card_reference:focus-within .card__content {
+    transition-duration: 0ms;
+  }
+
+  .card_reference:hover .card_reference__background,
+  .card_reference_reference:focus-within .card_reference__background {
+    transform: scale(1.3);
+  }
+
+  .card_reference:hover .card_reference__content--container > :not(.card__title),
+  .card_reference:hover .card_reference_reference__button,
+  .card_reference:focus-within .card_reference__content--container > :not(.card__title),
+  .card_reference:focus-within .card_reference__button {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    transition-delay: 1000ms;
+  }
+
+  .card_reference:hover .card_reference__title::after,
+  .card_reference:focus-within .card_reference__title::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition-delay: 500ms;
+  }
+}

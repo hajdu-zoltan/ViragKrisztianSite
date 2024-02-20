@@ -1,0 +1,38 @@
+{% load static %}
+<div id="myCarousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      {% for video in videos %}
+        
+        <div class="carousel-item{% if forloop.first %} active {% endif %}" {% if forloop.first %} id='activ_video'{% endif %} style="height: 17rem;">
+          <video controls autoplay loop muted height="100%" class="myvid" id="player{{forloop.counter}}" muted>
+            <source src="../media/{{video.videofile}}" type="video/mp4">
+          </video>
+        </div>
+      {% endfor %}
+      {% comment "" %}
+      <div class="carousel-item active" id='activ_video' style="height: 17rem;">
+        <video controls autoplay loop muted height="100%" class="myvid" id="player" muted>
+          <source src="../static/video/fb.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item"  style="height: 17rem;">
+        <video controls autoplay loop class="myvid" id="player2" muted>
+          <source src="../static/video/fb.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="carousel-item" style="height: 17rem;">
+        <video controls autoplay class="myvid" id="player3" muted>
+            <source src="../static/video/fb.mp4" type="video/mp4">
+        </video>
+      </div>
+      {% endcomment %}
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" onclick="stop_video()" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Vorige</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" onclick="stop_video()" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Volgende</span>
+    </a>
+  </div>

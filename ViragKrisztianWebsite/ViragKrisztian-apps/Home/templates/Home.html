@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="../static/style/home.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="../static/js/video.js"></script>
+<script src="../static/js/home.js"></script>
+<section class="bg_selection">
+  <div class="container-fluid  align-items-center" style="min-height: 50vh;">
+    <div class="row d-flex align-items-center ">
+      <div class="col-lg-4 mb-4 mb-lg-4">
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-4 logo">
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-4">
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-4">
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-4">
+        <div style="text-align: center;">
+        <h2 style="color: #fff;">Egyedi bútorok tervezése, kivitelezése garanciával.</h2>
+        <p style="color: #fff; ">Több mint 10 éves tapasztalattal állok a rendelkezésére! Keressen elképzeléseivel bizalommal!</p>
+          <a href="{% url 'Booking' %}">
+            <button type="button"  style="margin-top: 3vh; background-color: #31cc00; color: white; background-color: #FFFFFF00;    color: white; border-color: #FFFFFF;font-size: 43px !important; height:auto; font-weight: 600;" class="btn btn-lg" data-bs-toggle="button" aria-pressed="true">Kérjen ajánlatot</button>
+          </a>
+        </div>
+
+      </div>
+      <div class="col-lg-4 mb-4 mb-lg-4">
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="">
+  <div class="container-fluid  align-items-center reveal fade-top" style=" color: white;">
+    <div class="row d-flex align-items-center " style="border-radius: 10px; min-height: 100vh;">
+      <div class="col-lg-12">
+        <div class="row align-items-center">
+          <div class="col-lg-5" id="" style="text-align: center;" >
+            <div>
+              <div class="">
+                <h3 style="font-size: 40px;">Minőség. Esztétika. Precizitás.</h3>
+              </div>
+              <div class="main_info_text">
+                <p>Az egyéni műhelyem a minőség, esztétika és precizitás jegyében működik. Több évtizedes tapasztalattal rendelkezem az egyedi asztalosmunkák terén, és elkötelezett vagyok amellett, hogy minden projektet gondosan és alaposan végezzek el.
+                  Szolgáltatásaim közé tartozik az exkluzív bútorgyártás, ahol nemcsak a bútorok elkészítését vállalom, hanem azok pontos beépítését is, legyen szó Szécsényről vagy a magyar fővárosról, Budapestről. Munkáim során fontosnak tartom az együttműködést az ügyfeleimmel, hogy minden elképzelésüket és igényüket maximálisan figyelembe tudjam venni.
+                  FaMűvész - Ahol az egyedi bútorkészítés és a személyes odafigyelés találkoznak, hogy otthona valóban egyedi és kifinomult legyen.
+                </p>
+
+                <a href="{% url 'Gallery' %}">
+                  <button type="button"  style="margin-top: 3vh; background-color: #31cc00; color: white; background-color: #FFFFFF00;    color: white; border-color: #FFFFFF;font-size: 43px !important; height:auto; font-weight: 600;" class="btn btn-lg" data-bs-toggle="button" aria-pressed="true">Referenciáim</button>
+                </a>
+              </div>
+            </div>
+          </div>
+<!--          <div class="col-lg-1"></div>-->
+          <div class="col-lg-7 mb-4 mb-lg-4">
+            <img
+              src="../static/image/gallery/top/krisztian_top.png"
+              class="w-100 shadow-1-strong rounded mb-4 show-img"
+              alt="{{image.name}}"
+              onclick="openModal(this)"
+              />
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="bg_selection2">
+ <div class="container-fluid  align-items-center reveal fade-top" style="padding-left: 10%; padding-right: 10%;">
+  <div class="row d-flex align-items-center" style="min-height: 100vh;">
+    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 reveal fade-left">
+      <div class="card  h-100" style="border-radius: 15px; margin: auto;">
+        <div class="card-body text-center d-flex flex-column">
+          <img src="../static/image/icons/pricing.png" class="img-fluid rounded-circle profil_image" alt="Kerekes Helga">
+          <h2 class="mb-2">DÍJMENTES ÁRAJÁNLAT</h2>
+          <p style="text-align: left ;">Szegeden a helyszíni felmérés díja 3.000 Ft,
+            15 kilométeres vonzáskörzetében pedig 5.000 Ft,
+            maga az árajánlat pedig díjmentes.
+            A helyszínen egyeztetünk az igényeiről és a lehetőségekről,
+            megbeszéljük a pontos méretezést és a részleteket.
+            Ezt követően rövid határidőn belül elkészítem az árajánlatot.
+            Amennyiben végül engem bíznak meg a munkával,
+            úgy a felmérés díja levonásra kerül a munkadíjból.
+          </p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 mb-6">
+              <a style="color: black; margin-right: 2px" href="tel:06202336300">
+                <button class="btn btn-primary btn-lg btn-block" style="font-size: 1.25rem !important;" type="button"><i class="fas fa-phone mr-3"></i> +36202453547 </button>
+              </a>
+            </div>
+            <div class="col-lg-1 col-md-1 mb-1">
+            </div>
+            <div class="col-lg-5 col-md-5 mb-5">
+              <a href="{% url 'Booking' %}">
+                <button class="btn btn-primary btn-lg btn-block" style="font-size: 1.25rem !important;" type="button">Kérjen ajánlatot</button>
+              </a>
+            </div>
+          </div>
+          <div class="d-grid gap-2 col-12 mx-auto">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 reveal fade-right">
+      <div class="card  h-100" style="border-radius: 15px; margin: auto;">
+        <div class="card-body text-center d-flex flex-column">
+          <img src="../static/image/icons/quick.png" class="img-fluid rounded-circle profil_image" alt="Kerekes Helga">
+          <h2 class="mb-2">GYORS MUNKA, GARANCIÁVAL</h2>
+          <p style="text-align: left ; ">Jól felszerelt szegedi műhelyem, és szakmai tudásom garanciát jelent a minőségre. Profi gépparkomnak köszönhetően rövid határidővel tudok munkát vállalni.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section>
+    {% block refrence %}
+            {% include 'Reference_categories.html' %}
+    {% endblock refrence %}
+  <div class="container-fluid reveal fade-bottom" style="">
+    <div class="row justify-content-around" style="">
+      <!-- Swiper -->
+      <div class="swiper swiper1">
+        <div class="swiper-wrapper">
+          {% for image in images %}
+            {% if image.category.id == 1 %}
+              <div class="swiper-slide col-lg-2 col-md-3 mb-3  image_box">
+                  <div class="card" style="width: 18rem;">
+                    <img src="../media/{{image.image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{image.name}}</h5>
+                      <p class="card-text">{{image.description}}</p>
+                    </div>
+                  </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="featurette-divider">
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  
+<!-- Initialize Swiper -->
+ <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "cards",
+      grabCursor: true,
+      navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop:true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    });
+  </script>
+<script>
+  var _slidesPerView = window.innerWidth <= 760 ? '1' : '2';
+  if(_slidesPerView == '2'){
+    var swiper = new Swiper('.swiper2', {
+    slidesPerView: 1,
+    direction: getDirection(),
+    loop:true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  else{
+    var swiper = new Swiper('.swiper2', {
+    slidesPerView: 1,
+    direction: getDirection(),
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  
+  
+
+  function getDirection() {
+    var windowWidth = window.innerWidth;
+    var direction = window.innerWidth <= 760 ? 'horizontal' : 'horizontal';
+
+    return direction;
+  }
+</script>
+<script>
+  var _slidesPerView = window.innerWidth <= 760 ? '1' : '2';
+  if(_slidesPerView == '2'){
+    var swiper = new Swiper('.swiper1', {
+    slidesPerView: 6,
+    direction: getDirection(),
+    loop:true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+  else{
+    var swiper = new Swiper('.swiper1', {
+    slidesPerView: 1,
+    direction: getDirection(),
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    on: {
+      resize: function () {
+        swiper.changeDirection(getDirection());
+      },
+    },
+  });
+  }
+
+
+
+  function getDirection() {
+    var windowWidth = window.innerWidth;
+    var direction = window.innerWidth <= 760 ? 'horizontal' : 'horizontal';
+
+    return direction;
+  }
+</script>
+{% endblock content %}
+

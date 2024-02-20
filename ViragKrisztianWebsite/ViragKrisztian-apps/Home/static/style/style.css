@@ -1,0 +1,233 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,500,400,300,800);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
+
+#myCarousel {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .carousel-control-next, .carousel-control-prev {
+      width: 9% !important;
+      height: 50%;
+      margin-top: 11%;
+  }
+  
+  .carousel-inner {
+    background: #111;
+  }
+  
+  .carousel-indicators {
+    bottom: -13px !important;
+  }
+  
+  .carousel-item {
+    padding-bottom: 25px;
+  }
+  
+  video {
+    width: 100%;
+  }
+body{
+    /*background-color: #ffffff;*/
+    background-attachment: fixed;
+    background-image: linear-gradient(180deg, rgb(193 188 166 / 72%), #0a0e1a),url(../image/bg/old-black-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+.image_box{
+  transition: transform .5s ease;
+}
+
+.image_box:hover{
+	transform:scale(1.1,1.1);
+	cursor:pointer;
+  transition:all 0.5s ease-in-out ;
+
+}
+.btn_login{
+  background-color: #e35e0a;
+  font-size: 2.4vh !important;
+}
+.women_price{
+  background-color:#fc4410 !important;
+}
+.close{
+  font-size: 1.5rem !important;
+}
+
+#id_username{
+  display: block;
+  width: 100%;
+  height: calc(3em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+} 
+#id_email{
+  display: block;
+  width: 100%;
+  height: calc(3em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+} 
+#id_password1{
+  display: block;
+  width: 100%;
+  height: calc(3em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+} 
+#id_password2{
+  display: block;
+  width: 100%;
+  height: calc(3em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#id_first_name{
+  width: 100%;
+}
+#id_last_name{
+  width: 100%;
+}
+
+
+/* CSS */
+.button-40 {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #374151;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: .75rem 1.5rem;
+  }
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+
+#myCarousel .carousel-item video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-dark-bg{
+  background-color: #7fffd400;
+  background-image: url("../image/bg/card-dark.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-xs-center {
+  text-align: center;
+}
+
+.g-recaptcha {
+  display: inline-block;
+}

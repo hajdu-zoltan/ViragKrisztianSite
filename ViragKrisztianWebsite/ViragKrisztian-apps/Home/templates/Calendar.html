@@ -1,0 +1,132 @@
+{% load static %}
+<link rel="stylesheet" href="../static/style/calendar.css">
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<div class="row">
+    <script type="text/javascript"> 
+        var booked_appointments = "{{booked_appointments}}";
+        var _booked_appointments =[];
+        {% for price_ in price %}
+        {% comment %} <option value={{price_.id}}>{{price_.tittle}} {{price_.price}} Ft</option> {% endcomment %}
+            var a = {id: "{{booked_appointments.id}}", categori_time:"{{booked_appointments.categori}}"}
+            _booked_appointments.push(a)
+        {% endfor %}
+    </script>
+    <div class="col-md-6">
+        <div class="elegant-calencar">
+        <div id="header" class="clearfix">
+                <div class="head-info">
+                    <div class="head-month"></div>
+                    <div class="head-day"></div>
+                </div>
+                <div class="next_pre_buttons_container row justify-content-between">
+                    <div class="pre-button col"><</div>
+                    <div class="head-day col"></div>
+                    <div class="next-button col">></div>
+                </div>
+            
+        </div>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th type="submit">H</th>
+                    <th>K</th>
+                    <th>Sz</th>
+                    <th>Cs</th>
+                    <th>P</th>
+                    <th>Sz</th>
+                    <th>V</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td type="submit"  value="asd"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <div class="col-md-6 appointments"  style="overflow: auto;">
+        <div class="row" id="demo">
+            <script>
+                var dates = [];
+                var dates2 = [];
+                {% for i in booked_appointments  %}
+                    var a ={date:"{{ i.date|date:"d.m.Y"}}", time:"{{i.time|time:"H:i:s"}}", hairdresser_id:"{{i.hairdresser_id}}", booking_time:"{{i.categori.time}}"}
+                    dates2.push(a)
+                    dates.push("{{ i.date|date:"d.m.Y"}}, {{i.time|time:"H:i:s"}}, {{i.categori.time}}")
+                    console.log(dates2)
+                    {% comment %} <p style='color: white;'>{{i.date}}</p> {% endcomment %}
+                {% endfor %}
+    
+            </script>
+        </div>
+        
+        {% comment %} {% for i in number %}
+            <div class="radio__button chip" onclick="selected_time()">
+                <input class="radio__input" name="time" type="radio" value="{{i}}:00" id="&quot;{{i}}:00&quot;">
+                <label class="radio__label" for="&quot;{{i}}:00&quot;">
+                    <div class="chip__label" id ="div_{{i}}:00">{{i}}:00</div>
+                </label>
+            </div>
+            <div class="radio__button chip" onclick="selected_time()">
+                <input class="radio__input" name="time" type="radio" value="{{i}}:30" id="&quot;{{i}}:30&quot;">
+                <label class="radio__label" for="&quot;{{i}}:30&quot;">
+                    <div class="chip__label" id ="div_{{i}}:30">{{i}}:30</div>
+                </label>
+            </div>
+        {% endfor %} {% endcomment %}
+    </div>
+</div>
+
+<script src="../static/js/calendar.js"></script>

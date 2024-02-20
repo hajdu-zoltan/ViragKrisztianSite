@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="../static/style/gallery.css">
+<!-- Demo styles -->
+<style>
+</style>
+<section class="bg_selection">
+    <div class="container-fluid" style="padding-left: 10%; padding-right: 10%; padding-top:10vh">
+        {% if  actual_page == "Kitchen"%}
+            {% include 'Kitchen.html' %}
+        {% elif actual_page == "Living_room" %}
+            {% include 'Living_room.html' %}
+        {% elif actual_page == "Built_in_wardrobes" %}
+            {% include 'Built_in_wardrobes.html' %}
+        {% else %}
+            {% include 'Kitchen.html' %}
+            {% include 'Living_room.html' %}
+            {% include 'Built_in_wardrobes.html' %}
+            <div class="row" id="built-in-furniture-gallery">
+              {% for image in images %}
+                {% if image.category.id == 3 %}
+                  <div class="col-md-3 mb-3 image-item built-in-furniture-image-box" style="">
+                    <img
+                      src="{{ image.image.url }}"
+                      class="w-100 shadow-1-strong rounded mb-4 show-img built-in-furniture-image"
+                      alt="{{ image.name }}"
+                      onclick="openModal(this)"
+                    />
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Modális ablakok -->
+    <div id="myModalKitchen" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModalKitchen')">&times;</span>
+        <img id="modal-image-kitchen" src="" />
+        <div class="prev" onclick="changeImage(-1)">&#10094;</div>
+        <div class="next" onclick="changeImage(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div id="myModalLivingRoom" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModalLivingRoom')">&times;</span>
+        <img id="modal-image-living-room" src="" />
+        <div class="prev" onclick="changeImage(-1)">&#10094;</div>
+        <div class="next" onclick="changeImage(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div id="myModalBuiltInWardrobes" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModalBuiltInWardrobes')">&times;</span>
+        <img id="modal-image-built-in-wardrobes" src="" />
+        <div class="prev" onclick="changeImage(-1)">&#10094;</div>
+        <div class="next" onclick="changeImage(1)">&#10095;</div>
+      </div>
+    </div>
+</section>
+
+{% endblock content %}

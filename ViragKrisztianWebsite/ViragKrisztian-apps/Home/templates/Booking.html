@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}         
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+{% block content %}
+<link rel="stylesheet" href="../static/style/booking.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="../static/js/booking.js"></script>
+<form method="POST">
+    {% csrf_token %}  
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <section class="gradient-custom" style="">
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-01 col-lg-9 col-xl-9">
+              <div class="card text-white card-dark-bg" style="border-radius: 1rem;">
+                <div class="card-body p-4 text-center">
+      
+                  <div class="mb-md-3 mt-md-2 pb-2">
+      
+                    <h2 class="fw-bold mb-2 text-uppercase">Árajánlat kérés</h2>
+                    <p class="text-white-70 mb-5">Kérlek add meg a szükséges adatokat!</p>
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" name="name" maxlength="150" autofocus="" required="" id="id_username" value="{% if user.is_authenticated %}{{user.last_name}} {{user.first_name}}{%else%}{{name}}{%endif%}">
+                      <label class="form-label" for="typeName">Név</label>
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input type="email" required="" id="id_email" value="{% if user.is_authenticated %}{{user.email}}{%else%}{{email}}{%endif%}" name="email">
+                      <label class="form-label" for="typeEmailX">E-mail-cím</label>
+                    </div>
+      
+                    <div class="form-outline form-white mb-4">
+                      <input type="phone" name="phone" required="" class="booking_input">
+                      <label class="form-label" for="typePasswordX">Telefonszám</label>
+                    <div class="form-outline form-white mb-4">
+                        <textarea name="message" rows="3" cols="40"></textarea>
+                        <label class="form-label" for="typeName">Miben tudok segíteni Önnek?</label>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-01 col-lg-2 col-xl-2"></div>
+                      <div class="col-md-01 col-lg-8 col-xl-8">
+                          <div class="g-recaptcha" data-sitekey="6LdLXOMiAAAAAIrk7xvnfv0xo0oyU7kmcIv4zY2Z"></div>                      
+                        </div>
+                      <div class="col-md-01 col-lg-2 col-xl-2"></div>
+                    </div>
+                    <br>
+                    <input class="btn btn-outline-light btn-lg px-5 btn_login" name="register" type="submit" value="Árajánlatkérés">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</form>
+{% endblock content %}  

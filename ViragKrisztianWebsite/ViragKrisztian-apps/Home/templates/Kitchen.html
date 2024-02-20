@@ -1,0 +1,44 @@
+{% load static %}
+<h2 class="text-white">Konyha bútorok</h2>
+<div class="row" id="kitchen-gallery">
+  <!-- Képek betöltődnek ide -->
+  {% for image in images %}
+    {% if image.category.id == 3 %}
+      <div class="col-lg-3 col-md-4 mb-4 col-xs-6 image-item kitchen-image-box" style="display: none;">
+        <img
+          src="{{ image.image.url }}"
+          class="w-100 shadow-1-strong rounded mb-2 show-img kitchen-image"
+          alt="{{ image.name }}"
+          onclick="openModalKitchen(this)"
+        />
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<nav aria-label="Kitchen navigation">
+  <ul class="pagination" id="kitchen-pagination">
+    <!-- Lapozó gombok betöltődnek ide -->
+  </ul>
+</nav>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-image" src="" />
+    <div class="prev" onclick="changeImage(-1)">&#10094;</div>
+    <div class="next" onclick="changeImage(1)">&#10095;</div>
+  </div>
+</div>
+
+
+<script>
+  // Elérhetővé teszi a Django által generált `images` listát a JavaScript-ben
+  const kitchenImages = [
+    {% for image in images %}
+      {% if image.category.id == 3 %}
+        "{{ image.image.url }}",
+      {% endif %}
+    {% endfor %}
+  ];
+</script>
+<script src="{% static 'js/KitchenGallery.js' %}"></script>
